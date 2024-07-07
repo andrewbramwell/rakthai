@@ -1,0 +1,82 @@
+---
+title: 'About'
+description: "Discover the story behind Smile Beauty Spa in Ludgershall. Learn about our founder's Thai roots, passion for massage, and commitment to your well-being. Visit us today!"
+preloadImg: '/assets/images/banners/banner3.webp'
+permalink: 'about/'
+eleventyNavigation:
+    key: About Us
+    order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1400">
+    <div class="cs-container">
+        <span class="cs-int-title">About Us</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/about/" class="cs-link cs-active">About</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/banners/banner3-m.webp">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/banners/banner3.webp">
+        <img decoding="async" src="/assets/images/banners/banner3.jpg" alt="candles and oils" width="1280" height="568" aria-hidden="true">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-867">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/about.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/about.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/about.jpg" alt="may owner" width="630" height="775">
+        </picture>
+        <div class="cs-content">
+            <h2 class="cs-title">About Smile Beauty Spa</h2>
+            <p class="cs-text">
+                Welcome to Smile Beauty Spa, where we bring the ancient healing art of Thai massage to Ludgershall. Our story begins with our founder, May, who hails from Udonthani, Thailand. Growing up, May was inspired by her mother, a skilled masseuse who passed down her knowledge and passion for Thai massage through the generations.
+            </p>
+            <p class="cs-text">
+                With a deep-rooted desire to share the benefits of this ancient practice with others, May took over Smile Beauty Spa in August 2023, which had been running successfully for the past decade. 
+            </p>
+            <p class="cs-text">
+                As we continue to grow, our goal is to make Thai massage a household name, accessible to all who seek its benefits. We aim to educate our community about the transformative power of this ancient practice and how it can contribute to overall well-being and balance in our modern lives.
+            </p>
+            <p class="cs-text">
+                At Smile Beauty Spa, our mission is to promote the authentic art of Thai massage to both new and existing customers. We strive to create a welcoming and nurturing environment where everyone can experience the profound relaxation, rejuvenation, and healing that Thai massage offers.
+            </p>
+            <p class="cs-text">
+                When you visit Smile Beauty Spa, you can expect to be greeted with a smile, treated with the utmost care and respect, and to leave feeling refreshed, renewed, and deeply connected to your inner sense of peace and vitality.
+            </p>
+            <p class="cs-text">
+                We invite you to come and experience the difference at Smile Beauty Spa, where our passion for Thai massage and commitment to your well-being shines through in every interaction. 
+            </p>
+                                
+        </div>
+    </div>
+</section>
+                                
+                                
+
+    {% include 'components/cta.html' %}
+
+{% endblock %}

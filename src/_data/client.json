@@ -1,0 +1,17 @@
+{
+    "name": "Smile Beauty Spa",
+    "email": "hello@smile-beauty.co.uk",
+    "phoneForTel": "+441264318039",
+    "phoneFormatted": "01264 318039",
+    "onlineBooking": "https://smilebeautyspa.setmore.com/beta",
+    "giftVoucher": "https://smilebeautyspa.enjovia.com/",
+    "address": {
+        "lineOne": "7 Andover Rd",
+        "lineTwo": "",
+        "city": "Ludgershall",
+        "state": "Andover",
+        "zip": "SP11 9LU",
+        "mapLink": "https://maps.app.goo.gl/qfJHxcNS7GAV1A316"
+    },
+    "domain": "https://smile-beauty.co.uk/"
+}
