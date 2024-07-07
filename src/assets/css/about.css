@@ -141,3 +141,6 @@ body.dark-mode #quote-828 {
 body.dark-mode #quote-828 .cs-name {
   color: var(--bodyTextColorWhite);
 }
+body.dark-mode #quote-828 .cs-topper {
+  color: var(--primaryLight);
+}

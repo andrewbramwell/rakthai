@@ -7,9 +7,9 @@
 @media only screen and (min-width: 0em) {
     // Website colors
     :root {
-        --primary: #e31a6b;
-        --primaryLight: #e31a6b;
-        --secondary: #E0015B;
+        --primary: #F12626;
+        --primaryLight: #C4AB69;
+        --secondary: #C4AB69;
         --secondaryLight: #001f3f;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
@@ -40,16 +40,20 @@
         font-size: var(--headerFontSize);
         font-weight: 900;
         line-height: 1.2em;
-        margin: 0 auto (16/16rem);
+        text-align: inherit;
+        max-width: (700/16rem);
+        margin: 0 0 (16/16rem) 0;
         color: var(--headerColor);
         position: relative;
     }
-
+    
     .cs-text {
         font-size: var(--bodyFontSize);
         line-height: 1.5em;
+        text-align: inherit;
         width: 100%;
-        margin: 0 auto;
+        max-width: (650/16rem);
+        margin: 0;
         color: var(--bodyTextColor);
     }
 
@@ -119,21 +123,13 @@
         font-weight: 900;
         src: url('/assets/fonts/dm-sans-v14-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
     }
-    /* syne-regular - latin */
+    /* arizonia-regular - latin */
     @font-face {
         font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Syne';
+        font-family: 'Arizonia';
         font-style: normal;
         font-weight: 400;
-        src: url('/assets/fonts/syne-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-    }
-    /* syne-700 - latin */
-    @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Syne';
-        font-style: normal;
-        font-weight: 700;
-        src: url('/assets/fonts/syne-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        src: url('/assets/fonts/arizonia-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
     }
     
     body,
@@ -172,7 +168,7 @@
     h6 {
         margin: 0;
         color: var(--headerColor);
-        font-family: "Syne", Arial, serif;
+        font-family: "Arizonia", Arial, serif;
         
     }
 
@@ -191,7 +187,7 @@
 
     a,
     button {
-        font-family: "Syne", Arial, ;
+        font-family: "DM Sans", Arial, ;
         &:hover {
             cursor: pointer;
         }
@@ -1068,7 +1064,7 @@ html {
             margin: 0;
             color: var(--bodyTextColorWhite);
             position: relative;
-            font-family: "Syne", Arial, serif;
+            font-family: "Arizonia", Arial, serif;
         }
 
         .cs-breadcrumbs {
@@ -1381,14 +1377,14 @@ html {
         }
 
         .cs-header {
-            font-size: (20/16rem);
+            font-size: var(--headerFontSize);
             line-height: 1.5em;
             font-weight: 700;
             margin: 0 0 (20/16rem) 0;
-            color: var(--bodyTextColorWhite);
+            color: var(--primary);
             display: block;
             position: relative;
-            font-family: "Syne", Arial, serif;
+            font-family: "Arizonia", Arial, serif;
         }
 
         .cs-ul {
@@ -1466,7 +1462,7 @@ html {
             display: inline-block;
             position: relative;
             transition: color 0.3s;
-            font-family: "Syne", Arial, serif;
+            font-family: "DM Sans", Arial, serif;
         }
 
         .cs-credit {
@@ -1475,18 +1471,18 @@ html {
 
         .cs-credit-link {
             /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            font-size: clamp(1.26rem, 2.16vw, 1.44rem);
             line-height: 1.5em;
             text-decoration: none;
             width: auto;
             margin: 0;
-            color: var(--secondary);
+            color: var(--primary);
             display: inline-block;
             position: relative;
-            font-family: "Syne", Arial, serif;
+            font-family: "Arizonia", Arial, serif;
 
             &:hover {
-                color: var(--primary);
+                color: var(--secondary);
             }
         }
 

@@ -309,4 +309,7 @@
     background-color: var(--medium);
     color: var(--secondary);
   }
+  body.dark-mode #cs-menu-group-1037 .cs-topper {
+    color: var(--primaryLight);
+  }
 }

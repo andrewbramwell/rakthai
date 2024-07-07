@@ -36,6 +36,9 @@
   body.dark-mode #content-1450 .cs-text {
     opacity: 0.8;
   }
+  body.dark-mode #content-1450 .cs-topper {
+    color: var(--primaryLight);
+  }
 }
 /*-- -------------------------- -->
 <---          Pricing           -->
@@ -243,6 +246,10 @@
   body.dark-mode #pricing-r-995 .cs-menu-text {
     opacity: 0.8;
   }
+  body.dark-mode #pricing-995 .cs-topper,
+  body.dark-mode #pricing-r-995 .cs-topper {
+    color: var(--primaryLight);
+  }
 }
 /*-- -------------------------- -->
 <---     Pricing Reverse        -->
@@ -267,7 +274,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #pricing-r-995 {
-    background-color: var(--medium);
+    background-color: #1a1a1a;
   }
   body.dark-mode #pricing-r-995 .cs-header,
   body.dark-mode #pricing-r-995 .cs-price {

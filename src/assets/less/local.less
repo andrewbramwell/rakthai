@@ -205,12 +205,9 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #sbs-945 {
+    #sbs-867 {
         padding: var(--sectionPadding);
-        background: #f7f7f7;
-        /* clips anything overflowing */
-        overflow: hidden;
-        position: relative;
+        background-color: #f7f7f7;
 
         .cs-container {
             width: 100%;
@@ -221,18 +218,31 @@
             flex-direction: column;
             align-items: center;
             /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
+            gap: clamp(3rem, 7vw, 4rem);
         }
 
         .cs-content {
-            /* set text align to left if content needs to be left aligned */
+            /* set text aling to left if content needs to be left aligned */
             text-align: left;
             width: 100%;
             max-width: (542/16rem);
+            /* prevents padding from affecting width and height */
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
             align-items: flex-start;
+        }
+
+        .cs-title {
+            font-size: var(--headerFontSize);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: (700/16rem);
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
         }
 
         .cs-text {
@@ -242,103 +252,48 @@
             }
         }
 
-        .cs-image-group {
-            /* scales the whole section down and ties the font size to the vw and stops at 75% of the vale of 1em, changes at desktop */
-            font-size: ~"min(2.24vw, .844em)";
-            /* everything inside this box is in ems so we can scale it all down proportionally with a font size */
-            width: (650/16em);
-            height: (687/16em);
-            position: relative;
-            z-index: 1;
-        }
-
         .cs-picture {
-            /* clips the image to match the border radius of the cs-picture */
-            overflow: hidden;
             display: block;
-            position: absolute;
+            position: relative;
+            width: 100%;
+            max-width: (630/16rem);
+            /* 400px - 775px */
+            height: clamp(25rem, 70vw, 48.4375rem);
+            /* 100px - 200px */
+            overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
-                /* makes it act like a background image */
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
-        }
-
-        .cs-picture1 {
-            width: (349/16em);
-            height: (590/16em);
-            top: (49/16em);
-            left: 0;
-        }
-
-        .cs-picture2 {
-            width: (281/16em);
-            height: (387/16em);
-            top: 0;
-            right: 0;
-        }
-
-        .cs-picture3 {
-            width: (281/16em);
-            height: (280/16em);
-            bottom: 0;
-            right: 0;
-        }
-
-        .cs-seal {
-            width: (150/16em);
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-30%, -40%);
-        }
-
-        .cs-floater {
-            display: none;
         }
     }
 }
 
-/* Small Desktop - 1024px */
+/* Tablet - 768px */
 @media only screen and (min-width: 64rem) {
-    #sbs-945 {
-        .cs-container {
-            max-width: (1280/16rem);
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+    #sbs-867 {
+        padding: var(--sectionPadding);
 
-        .cs-image-group {
-            /* set to inherit at Large Desktop */
-            font-size: ~"min(1.15vw, 1em)";
-            margin: 0;
-            /* prevents flexbox from squishing it */
-            flex: none;
+        .cs-container {
+            flex-direction: row;
+            max-width: (1280/16rem);
+            justify-content: space-between;
         }
 
         .cs-content {
-            width: 51%;
+            width: 53%;
+            /* reset the padding, add the section padding back to the section container */
+            padding: 0;
         }
-    }
-}
 
-/* Large Desktop - 1800px */
-@media only screen and (min-width: 112.5rem) {
-    #sbs-945 {
-        .cs-floater {
-            width: (445/16rem);
-            height: auto;
-            display: block;
-            position: absolute;
-            right: 0;
-            top: (20/16rem);
+        .cs-picture {
+            width: 47vw;
+            position: relative;
         }
     }
 }
@@ -346,38 +301,25 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
-        #sbs-945 {
-            background-color: var(--charcoal);
+        #sbs-867 {
+            background-color: #1a1a1a;
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
             .cs-title,
-            .cs-text,
-            .cs-header,
-            .cs-link-content {
+            .cs-text {
                 color: var(--bodyTextColorWhite);
-                transition: color 0.3s;
             }
 
             .cs-text {
                 opacity: 0.8;
             }
 
-            .cs-topper {
-                color: var(--secondary);
-            }
-
-            .cs-link {
+            .cs-picture {
                 &:before {
                     background-color: var(--accent);
                 }
-            }
-
-            .cs-icon {
-                /* makes icons that are not black turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-graphic1,
-            .cs-graphic2 {
-                filter: brightness(50%);
             }
         }
     }
@@ -451,7 +393,7 @@
         }
 
         .cs-h3 {
-            font-size: (20/16rem);
+            font-size: 2em;
             line-height: 1.2em;
             text-align: inherit;
             font-weight: 700;
@@ -614,12 +556,9 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #sbsr-946 {
+    #sbs-r-870 {
         padding: var(--sectionPadding);
-        background: #f7f7f7;
-        /* clips anything overflowing */
-        overflow: hidden;
-        position: relative;
+        background-color: #f7f7f7;
 
         .cs-container {
             width: 100%;
@@ -630,7 +569,7 @@
             flex-direction: column;
             align-items: center;
             /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
+            gap: clamp(3rem, 7vw, 4rem);
         }
 
         .cs-content {
@@ -638,11 +577,19 @@
             text-align: left;
             width: 100%;
             max-width: (542/16rem);
+            /* prevents padding from affecting width and height */
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
             align-items: flex-start;
         }
+
+        .cs-title {
+            text-align: start; 
+        }
+
+        
 
         .cs-text {
             margin-bottom: (16/16rem);
@@ -651,106 +598,49 @@
             }
         }
 
-        .cs-image-group {
-            /* scales the whole section down and ties the font size to the vw and stops at 75% of the vale of 1em, changes at desktop */
-            font-size: ~"min(2.24vw, .844em)";
-            /* everything inside this box is in ems so we can scale it all down proportionally with a font size */
-            width: (650/16em);
-            height: (687/16em);
-            position: relative;
-            z-index: 1;
-        }
-
         .cs-picture {
-            /* clips the image to match the border radius of the cs-picture */
-            overflow: hidden;
             display: block;
-            position: absolute;
+            position: relative;
+            width: 100%;
+            max-width: (630/16rem);
+            /* 400px - 775px */
+            height: clamp(25rem, 70vw, 48.4375rem);
+            overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
-                /* makes it act like a background image */
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
-        }
-
-        .cs-picture1 {
-            width: (349/16em);
-            height: (590/16em);
-            top: (49/16em);
-            left: 0;
-        }
-
-        .cs-picture2 {
-            width: (281/16em);
-            height: (387/16em);
-            top: 0;
-            right: 0;
-        }
-
-        .cs-picture3 {
-            width: (281/16em);
-            height: (280/16em);
-            bottom: 0;
-            right: 0;
-        }
-
-        .cs-seal {
-            width: (150/16em);
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-30%, -40%);
-        }
-
-        .cs-floater {
-            display: none;
         }
     }
 }
 
-/* Small Desktop - 1024px */
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #sbsr-946 {
-        .cs-container {
-            max-width: (1280/16rem);
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
 
-        .cs-image-group {
-            /* set to inherit at Large Desktop */
-            font-size: ~"min(1.15vw, 1em)";
-            margin: 0;
-            /* prevents flexbox from squishing it */
-            flex: none;
-            /* sends it to the right int he 2nd position */
-            order: 2;
+        .cs-container {
+            flex-direction: row;
+            max-width: (1280/16rem);
+            justify-content: space-between;
         }
 
         .cs-content {
-            width: 51%;
+            width: 53%;
+            /* reset the padding, add the section padding back to the section container */
+            padding: 0;
+            /* sends it to the left in the 1st position */
+            order: -1;
         }
-    }
-}
 
-/* Large Desktop - 1800px */
-@media only screen and (min-width: 112.5rem) {
-    #sbsr-946 {
-        .cs-floater {
-            width: (445/16rem);
-            height: auto;
-            display: block;
-            position: absolute;
-            left: (-50/16rem);
-            top: (20/16rem);
-            transform: scaleX(-1);
+        .cs-picture {
+            width: 47vw;
+            position: relative;
         }
     }
 }
@@ -758,42 +648,31 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
-        #sbsr-946 {
-            background-color: var(--charcoal);
+        #sbs-r-870 {
+            background-color: #1a1a1a;
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+
             .cs-title,
-            .cs-text,
-            .cs-header,
-            .cs-link-content {
+            .cs-text {
                 color: var(--bodyTextColorWhite);
-                transition: color 0.3s;
             }
 
             .cs-text {
                 opacity: 0.8;
             }
 
-            .cs-link {
+            .cs-picture {
                 &:before {
                     background-color: var(--accent);
                 }
             }
-
-            .cs-topper {
-                color: var(--secondary);
-            }
-
-            .cs-icon {
-                /* makes icons that are not black turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-graphic1,
-            .cs-graphic2 {
-                filter: brightness(50%);
-            }
         }
     }
 }
+
+                                
 
 /*-- -------------------------- -->
 <---            FAQ             -->
